@@ -1,15 +1,14 @@
 <template>
   <div class="webgl-content">
     <div :id="containerId" v-bind:style="{ width: width + 'px', height: height + 'px' }"></div>
-    <div v-if="loaded == false">
-      <div class="unity-loader">
-        <div class="bar">
-          <div class="fill" v-bind:style="{ width: progress * 100 + '%'}"></div>
-        </div>
-      </div>
+    <div class="logo Dark" v-if="loaded == false"></div>
+    <div class="progress Dark" v-if="loaded == false">
+      <div class="empty" style="width: 0%;"></div>
+      <div class="full" v-bind:style="{ width: progress * 100 + '%'}"></div>
     </div>
     <div class="footer" v-if="hideFooter !== true">
-      <a class="fullscreen" @click.prevent="fullscreen">Fullscreen</a>
+      <div class="webgl-logo"></div>
+      <div class="fullscreen" @click.prevent="fullscreen"></div>
     </div>
   </div>
 </template>
