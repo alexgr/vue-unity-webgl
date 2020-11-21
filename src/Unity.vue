@@ -70,6 +70,15 @@
         this.eventBus.load = true
       }
     },
+    beforeDestroy: function () {
+      console.log("navigate off!");
+      if (this.gameInstance !== null){
+        this.gameInstance.Quit(function() {
+             console.log("quit webgl Unity instance!");
+        });
+        this.gameInstance = null;
+      }
+    },
     mounted () {
       const instantiate = () => {
         if (typeof UnityLoader === 'undefined') {
