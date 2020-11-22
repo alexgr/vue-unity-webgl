@@ -77,6 +77,20 @@
              console.log("quit webgl Unity instance!");
         });
         this.gameInstance = null;
+        
+        //unity 2020
+      //  this.gameInstance
+      //   .Quit()
+      //   .then(() => {
+      //       // Do whatever your app needs here
+      //       console.log("quit webgl Unity instance was a success!");
+      //       this.gameInstance = null;
+      //       //this.playState$.next(null);
+      //   })
+      //   .catch(() => {
+      //     console.log("Quitting Unity wasn't a success 😖");
+      //   });
+      
       }
     },
     mounted () {
